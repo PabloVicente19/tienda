@@ -1,4 +1,6 @@
 const $cardContainer = document.querySelector('.card-product-container');
+const $iconBurguer = document.querySelector('.menu-bars')
+const $navbarList = document.querySelector('.navbar-list')
 
 const createCard = (product) => {
   const {id, imagen, marca, modelo, precio} = product;
@@ -15,10 +17,14 @@ const createCard = (product) => {
 }
 
 const renderCard = (product) =>{
-  return $cardContainer.innerHTML = product.map(producto => createCard(producto) );
+  return $cardContainer.innerHTML = product.map(producto => createCard(producto) ).join("");
 }
 
+$iconBurguer.addEventListener('click', () => {
+  $navbarList.classList.toggle('hidden-list')
+})
 const init = () => {
   renderCard(products)
+
 }
 init()
