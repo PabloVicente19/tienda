@@ -34,37 +34,34 @@ body{
 }
 
 .navbar-list{
+  align-self: flex-end;
   display: flex;
   justify-content: center;
   gap: 1.2rem;
 }
-.hidden-list{
-  display: none;
-}
+
 .navbar-list-link{
   font-size: 1.1rem;
   color: #000;
 }
 
-
-
 .card-product-container{
-  background-color: #000;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card-product{
-  width: min(150px, 100%);
-  margin: .5rem auto;
+  width: min(200px, 100%);
+  margin: 1rem ;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: .4rem;
-  background-color: antiquewhite;
+  gap: .5rem;
   border-radius: .5rem;
+  outline: #000 solid;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.76) ;
 }
 
 .card-product-title{
@@ -90,11 +87,11 @@ body{
 }
 .card-product-btn{
   font-size: 14px;
-  padding: 5px 8px;
+  padding: 8px 10px;
   border-radius: .5rem;
   border: none;
   margin-bottom: .5rem;
-  background-color: rgba(255, 0, 0, 0.432);
+  background-color: rgba(101, 21, 121, 0.527);
   font-weight: 600;
   cursor: pointer;
 }
