@@ -1,5 +1,15 @@
 const $cardContainer = document.querySelector('.card-product-container');
-const $iconBurguer = document.querySelector('.menu-bars')
+const $menu = document.querySelector('.bars-menu-container');
+const $menuList = document.querySelector('.navbar-list');
+
+$menu.addEventListener('click', ()=> {
+  $menuList.classList.toggle('hidden')
+})
+
+
+
+
+
 
 const createCard = (product) => {
   const {id, imagen, marca, modelo, precio} = product;
