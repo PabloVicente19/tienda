@@ -1,11 +1,21 @@
 const $cardContainer = document.querySelector('.card-product-container');
 const $menu = document.querySelector('.bars-menu-container');
 const $menuList = document.querySelector('.navbar-list');
-
-$menu.addEventListener('click', ()=> {
-  $menuList.classList.toggle('hidden')
+const $carrito = document.querySelector('.carrito');
+const $modalCarrito = document.querySelector('.modal-cart-container')
+$carrito.addEventListener('click', () => {
+  $modalCarrito.classList.toggle('hidden')
 })
 
+const animationMenu = () => {
+  const menuLines = document.querySelectorAll('.bars')
+  menuLines[0].classList.toggle('bars_line1')
+  menuLines[1].classList.toggle('bars_line2')
+  menuLines[2].classList.toggle('bars_line3')
+  $menuList.classList.toggle('hidden');
+}
+
+$menu.addEventListener('click', animationMenu)
 
 
 
