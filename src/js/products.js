@@ -3,7 +3,7 @@ const products = [
     id: 1,
     marca: "adidas",
     modelo: "forum",
-    precio: 14054,
+    precio: 2,
     imagen: "./src/imgs/shoes/adidas-forum.jpg",
     stock: 1
   },

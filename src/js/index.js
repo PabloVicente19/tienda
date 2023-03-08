@@ -6,10 +6,12 @@ const $modalCarrito = document.querySelector('.modal-cart-container')
 const $modalProducts = document.querySelector('.products-container')
 const cart = []
 
+// abrir el menu y cerrarlo
 $carrito.addEventListener('click', () => {
   $modalCarrito.classList.toggle('hidden')
 })
 
+// Animo el menu cuando se habre
 const animationMenu = () => {
   const menuLines = document.querySelectorAll('.bars')
   menuLines[0].classList.toggle('bars_line1')
@@ -18,7 +20,6 @@ const animationMenu = () => {
   $menuList.classList.toggle('hidden');
 }
 
-$menu.addEventListener('click', animationMenu)
 
 // Creacion de las card en el main
 const createCard = (product) => {
@@ -43,13 +44,20 @@ const addCart = (e) => {
   if (!productId) return;
 
   const item = products.find(prod => prod.id == productId)
-  const productEqual = cart.some(prod => prod.id == item.id)
-  if (productEqual) {
-    item.stock++
-    renderCardInCart(cart)
+  const sameProduct = cart.some(prod => prod.id == item.id)
+  if (sameProduct) {
+    item.stock++;
   }
-  cart.push(item)
+  else {
+    cart.push(item)
+  }
+  renderCardInCart(cart)
 }
+// Remover un producto
+const removeProduct = (value) => {
+  
+}
+
 
 //creacion de la card en el carrito
 const createCardInCart = (product) => {
@@ -67,7 +75,9 @@ const createCardInCart = (product) => {
     </div>
   </div>`
 }
-
+const clearContainer = () => {
+  return $modalProducts.innerHTML = "";
+}
 // renderizo las cards en el carrito
 const renderCardInCart = (product) =>{
    $modalProducts.innerHTML = product.map(producto => createCardInCart(producto))
@@ -78,8 +88,8 @@ const renderCard = (container,product) =>{
 }
 
 const init = () => {
+  $menu.addEventListener('click', animationMenu)
   renderCard($cardContainer,products)
   $cardContainer.addEventListener('click',addCart)
-
 }
 init()
