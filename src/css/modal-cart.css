@@ -1,6 +1,7 @@
 @import "./styles.css";
 
 .modal-cart-container{
+  max-width: 500px;
   width: 95%;
   margin: auto;
   height: calc(100vh - 50px);
@@ -28,13 +29,15 @@
 }
 .products-container{
   flex-basis: 100%;
-  background-color: antiquewhite;
 }
 .product{
+  margin: 10px auto;
   padding: .5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
+  background-color: antiquewhite;
 }
 .product-img-container{
   max-width: 100px;
@@ -49,10 +52,20 @@
   display: grid;
   grid-template-columns: 1fr 50px;
   grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
 }
 .quit{
   grid-column: 2/3;
   grid-row: 1;
   justify-self: end;
   color: red;
+}
+.product-title{
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.product-price{
+  grid-column: 2/3;
+  grid-row: 3;
+  font-weight: bold;
 }
