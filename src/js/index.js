@@ -4,8 +4,12 @@ const $menuList = document.querySelector('.navbar-list');
 const $carrito = document.querySelector('.carrito');
 const $modalCarrito = document.querySelector('.modal-cart-container')
 const $modalProducts = document.querySelector('.products-container')
+const $btnDeleteAllProducts = document.querySelector('.modal-cart-empty')
 const cart = []
 
+$btnDeleteAllProducts.addEventListener('click', () => {
+  $modalProducts.innerHTML = ""
+})
 // abrir el menu y cerrarlo
 $carrito.addEventListener('click', () => {
   $modalCarrito.classList.toggle('hidden')
@@ -53,11 +57,6 @@ const addCart = (e) => {
   }
   renderCardInCart(cart)
 }
-// Remover un producto
-const removeProduct = (value) => {
-  
-}
-
 
 //creacion de la card en el carrito
 const createCardInCart = (product) => {
@@ -75,9 +74,7 @@ const createCardInCart = (product) => {
     </div>
   </div>`
 }
-const clearContainer = () => {
-  return $modalProducts.innerHTML = "";
-}
+
 // renderizo las cards en el carrito
 const renderCardInCart = (product) =>{
    $modalProducts.innerHTML = product.map(producto => createCardInCart(producto))
