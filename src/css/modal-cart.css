@@ -1,10 +1,131 @@
 @import "./styles.css";
 
 .modal-cart-container{
+  width: 90%;
+  max-width: 500px;
+  height: 600px;
+  padding: 20px 30px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: bisque;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;  
+  box-shadow: 1px 2px 20px #000;
+}
+/* titulo e icono de cerrar carrito */
+.modal-cart-title-icon-container{
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightblue;
+}
+.modal-title{
+  font-size: 25px;
+}
+.modal-cart-exit{
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+/* productos */
+.moda-products-content{
+  height: 450px;
+  padding: 10px;
+  background-color: lightcyan;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.product{
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: #000 solid;
+}
+.product-img-container{
+  display: flex;
+  align-items: center;
+}
+.product-img{
+  width: 100%;
+  max-width: 80px;
+  object-fit: cover;
+}
+.product-details{
+  width: 100%;
+  padding: 5px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.modal-btns{
+  min-height: 50px; 
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:20px
+}
+.quit{
+  grid-column: 2/3;
+  grid-row: 1;
+  color: red;
+  justify-self: end;
+  cursor: pointer;
+}
+.product-title{
+  grid-column: 1/2;
+  grid-row: 1;
+  font-weight: bold;
+}
+.product-cant{
+  grid-column: 1/2;
+  grid-row: 2;
+}
+.product-price{
+  grid-column: 2/3;
+  grid-row: 3;
+  justify-self: flex-end;
+  font-weight: bold;
+
+}
+/* Botones */
+.modal-btn-remove{
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background-color: red;
+  cursor: pointer;
+}
+.modal-btn-sell{
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
+
+}
+
+/* .modal-cart-container{
   max-width: 500px;
   width: 95%;
   margin: auto;
-  height: calc(100vh - 50px);
+  height: 700px;
   background-color: aliceblue;
   position: absolute;
   top: 50px;
@@ -12,15 +133,14 @@
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 
-  
 }
 .modal-cart{
   padding: 1rem;
+  height: 500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 400px;
   overflow: scroll;
 }
 
@@ -38,8 +158,7 @@
   margin: 10px auto;
   padding: .5rem 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   gap: 15px;
   background-color: antiquewhite;
 }
@@ -85,4 +204,4 @@
   background-color: black;
   color: #fff;
   cursor: pointer;
-}
+} */

@@ -7,9 +7,9 @@ const $modalProducts = document.querySelector('.products-container')
 const $btnDeleteAllProducts = document.querySelector('.modal-cart-empty')
 const cart = []
 
-$btnDeleteAllProducts.addEventListener('click', () => {
-  $modalProducts.innerHTML = ""
-})
+// $btnDeleteAllProducts.addEventListener('click', () => {
+//   $modalProducts.innerHTML = ""
+// })
 // abrir el menu y cerrarlo
 $carrito.addEventListener('click', () => {
   $modalCarrito.classList.toggle('hidden')
