@@ -2,17 +2,14 @@ const $cardContainer = document.querySelector('.card-product-container');
 const $menu = document.querySelector('.bars-menu-container');
 const $menuList = document.querySelector('.navbar-list');
 const $carrito = document.querySelector('.carrito');
-const $modalCarrito = document.querySelector('.modal-cart-container')
-const $modalProducts = document.querySelector('.products-container')
-const $btnDeleteAllProducts = document.querySelector('.modal-cart-empty')
+const $modalCart = document.querySelector('.modal-cart-container')
+const $productsCartContainer = document.querySelector('.modal-products-content')
 const cart = []
 
-// $btnDeleteAllProducts.addEventListener('click', () => {
-//   $modalProducts.innerHTML = ""
-// })
+
 // abrir el menu y cerrarlo
 $carrito.addEventListener('click', () => {
-  $modalCarrito.classList.toggle('hidden')
+  $modalCart.classList.toggle('hidden')
 })
 
 // Animo el menu cuando se habre
@@ -63,21 +60,21 @@ const createCardInCart = (product) => {
   const {imagen, modelo, marca, precio, stock} = product
   return`
   <div class="product">
-    <div class="product-img-container">
-      <img class="product-img" src=${imagen} alt="">
-    </div>
-    <div class="product-details">
-      <i class="fa-solid fa-circle-xmark quit"></i>
-      <span class="product-title">${marca} ${modelo}</span>
-      <span class="product-cant">Cantidad: ${stock}</span>
-      <span class="product-price">$${precio}</span>
-    </div>
-  </div>`
+          <div class="product-img-container">
+            <img class="product-img" src=${imagen} alt="">
+          </div>
+          <div class="product-details">
+            <i class="fa-solid fa-circle-xmark quit"></i>
+            <span class="product-title">${marca} ${modelo}</span>
+            <span class="product-cant">Cantidad: ${stock}</span>
+            <span class="product-price">$${precio}</span>
+          </div>
+        </div>`
 }
 
 // renderizo las cards en el carrito
 const renderCardInCart = (product) =>{
-   $modalProducts.innerHTML = product.map(producto => createCardInCart(producto))
+   $productsCartContainer.innerHTML = product.map(producto => createCardInCart(producto)).join("")
 }
 // Renderizo las card en el main
 const renderCard = (container,product) =>{
